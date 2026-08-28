@@ -153,7 +153,7 @@ reqs	=
 
 [effect_city_food_supply_age_1.2]
 type	= "Output_Add_Tile"
-value	= 2	
+value	= 1	
 reqs	=
     { "type", "name", "range", "present"
       "Age", "1", "City", FALSE
@@ -165,7 +165,7 @@ reqs	=
 
 [effect_city_food_supply_age_1.3]
 type	= "Output_Add_Tile"
-value	= 2	
+value	= 1	
 reqs	=
     { "type", "name", "range", "present"
       "Age", "1", "City", FALSE
@@ -224,16 +224,53 @@ reqs	=
       "MinYear", "-5000", "World", FALSE
     }
 
+;;;;;;;;;;;;;;;; AFTER THE INITIAL BOOST, CENTRAL TILES START GETTING DEPLETED ;;;;;;;;;;;;;;;
 
-[effect_tribal_city_centre]
+[effect_tribal_city_centre_4]
 type="Output_Per_Tile"
-value=-100
+value=-20
 reqs={"type","name","range", "present"
-"Age", "1", "City",TRUE
+"Age", "4", "City", TRUE
 "Gov","Tribal","Player",TRUE
-"OutputType","Food","Local",TRUE
 "CityTile","Center","Local",TRUE
 }
+
+[effect_tribal_city_centre_5]
+type="Output_Per_Tile"
+value=-20
+reqs={"type","name","range", "present"
+"Age", "5", "City", TRUE
+"Gov","Tribal","Player",TRUE
+"CityTile","Center","Local",TRUE
+}
+
+[effect_tribal_city_centre_6]
+type="Output_Per_Tile"
+value=-20
+reqs={"type","name","range", "present"
+"Age", "6", "City", TRUE
+"Gov","Tribal","Player",TRUE
+"CityTile","Center","Local",TRUE
+}
+
+[effect_tribal_city_centre_7]
+type="Output_Per_Tile"
+value=-20
+reqs={"type","name","range", "present"
+"Age", "7", "City", TRUE
+"Gov","Tribal","Player",TRUE
+"CityTile","Center","Local",TRUE
+}
+
+[effect_tribal_city_centre_8]
+type="Output_Per_Tile"
+value=-20
+reqs={"type","name","range", "present"
+"Age", "8", "City", TRUE
+"Gov","Tribal","Player",TRUE
+"CityTile","Center","Local",TRUE
+}
+
 
 [effect_food_outside_city]
 type    = "Output_Add_Tile"
@@ -241,6 +278,7 @@ value   = 1
 reqs    = 
         { "type", "name", "range", "present"
 	  "Citytile", "Center", "Local", FALSE
+	  "Age", "4", "City", FALSE
 	  "OutputType", "Food", "Local", TRUE
 	  "Gov", "Tribal", "Player", TRUE
 	}
