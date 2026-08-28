@@ -8,13 +8,13 @@
 ; Note that the freeciv AI may not cope well with anything more
 ; than minor changes.
 
-*include "Sim_test/effects/calender.effects"
-*include "Sim_test/effects/migration.effects"
-*include "Sim_test/effects/tribal.effects"
-; *include "Sim_test/effects/regen.effects" ; Replaced by resupply units
-*include "Sim_test/effects/regen2.effects"
-*include "Sim_test/effects/supply.effects"
-*include "Sim_test/effects/combat_rounds.effects"
+*include "Sim/effects/calender.effects"
+*include "Sim/effects/migration.effects"
+*include "Sim/effects/tribal.effects"
+; *include "Sim/effects/regen.effects" ; Replaced by resupply units
+*include "Sim/effects/regen2.effects"
+*include "Sim/effects/supply.effects"
+*include "Sim/effects/combat_rounds.effects"
 
 [datafile]
 description="Sim ruleset effect data for Freeciv21"
