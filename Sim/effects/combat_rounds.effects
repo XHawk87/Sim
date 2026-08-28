@@ -1,7 +1,7 @@
 
 [effect_combat_rounds_QuickAttack]
 type   = "Combat_Rounds"
-value  =  4
+value  =  6
 reqs   =
     { "type", "name", "range"
     "UnitFlag", "QuickAttack", "Local"
