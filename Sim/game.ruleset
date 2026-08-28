@@ -125,8 +125,7 @@ actor_reqs =
       "DiplRel",      "Peace",      "Local", FALSE
       "MinMoveFrags", "1",          "Local", TRUE 
       ; See `effect_resupply_move_cost` in `supply.effects`
-      "UnitFlag",     "NonMil",     "Local", FALSE
-      "UnitClass",    "Air",        "Local", FALSE
+      "UnitFlag", "Mergeable", "Local", TRUE
       ; Changing this will require modifying `can_resupply` in script.lua
     }
 target_reqs =
