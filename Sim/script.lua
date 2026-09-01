@@ -114,7 +114,31 @@ end
 -- Unit action to resupply at the targetted supply unit.
 function resupply_action_handler(action, actor, target)
   if action:rule_name() ~= "User Action 1" then return end -- Resupply
-  resupply_by_amount(actor, target, resupply_action_max_heal)
+  local actor_name = actor.utype:rule_name()
+  local target_name = target.utype:rule_name()
+  if (is_supplier(target) and can_resupply(actor)) or
+      (is_mergeable(target) and target.utype == actor.utype) then
+    resupply_by_amount(actor, target, resupply_action_max_heal)
+  elseif not is_mergeable(actor) and not can_resupply(actor) then
+    log.error("Misconfigured action_enabler for resupply. %s is not a valid actor", 
+        actor_name)
+  elseif not is_mergeable(target) and not is_supplier(target) then
+    log.error("Misconfigured action_enabler for resupply. %s is not a valid target", 
+        target_name)
+  elseif not is_supplier(target) and target.utype ~= actor.utype then
+    notify.event(actor.owner, actor.tile, E.UNIT_ACTION_FAILED,
+      "A %s can only merge into another %s not resupply a %s",
+      target_name, target_name, actor_name
+    )
+  elseif not can_resupply(actor) and target.utype ~= actor.utype then
+    notify.event(actor.owner, actor.tile, E.UNIT_ACTION_FAILED,
+      "A %s can only merge with another %s not receive supply from a %s",
+      actor_name, actor_name, target_name
+    )
+  else
+    log.error("This should be unreachable. actor=%s, target=%s", 
+        actor_name, target_name)
+  end
 end
 signal.connect("action_started_unit_unit", "resupply_action_handler")
 
