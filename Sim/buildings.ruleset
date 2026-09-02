@@ -166,7 +166,7 @@ obsolete_by={"type","name","range"
 build_cost=30
 upkeep=1
 sabotage=100
-helptext="With a Barracks, each new land unit built in a city will automatically have three additional Veteran levels. Also, damaged land units which stay in town for one full  turn without moving are completely restored.  Barracks have no effect under Tribal government."
+helptext="With a Barracks, each new land unit built in a city will automatically have three additional Veteran levels. Barracks have no effect under Tribal government."
 
 [building_8]
 name=_("Barracks II")
@@ -185,7 +185,7 @@ obsolete_by={"type","name","range"
 build_cost=40
 upkeep=1
 sabotage=100
-helptext="With a Barracks, each new land unit built in a city will automatically have three additional Veteran levels. Also, damaged land units which stay in town for one full  turn without moving are completely restored."
+helptext="With a Barracks, each new land unit built in a city will automatically have three additional Veteran levels. "
 
 [building_9]
 name=_("Barracks III")
@@ -200,7 +200,7 @@ reqs={"type","name","range"
 build_cost=60
 upkeep=1
 sabotage=100
-helptext="With a Barracks, each new land unit built in a city will automatically have three additional Veteran levels. Also, damaged land units which stay in town for one full  turn without moving are completely restored."
+helptext="With a Barracks, each new land unit built in a city will automatically have three additional Veteran levels."
 
 [building_10]
 name=_("Cathedral")
