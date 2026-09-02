@@ -360,7 +360,7 @@ cooler_wetter_result="none"
 cooler_drier_result="none"
 flags="NoBarbs","NoCities","CanHaveRiver","Frozen","Oil"
 property_frozen=100
-native_to="Missile","Land","Raiders","Small Land","Non Military","Big Land","Merchant","Helicopter","Air", "Tribe"
+native_to="Missile","Land","Small Land","Non Military","Big Land","Merchant","Helicopter","Air", "Tribe"
 color.r=232
 color.g=232
 color.b=232
@@ -403,7 +403,7 @@ flags="CanHaveRiver","Oil"
 property_tropical=50
 property_temperate=20
 property_dry=100
-native_to="Missile","Land","Raiders","Small Land","Non Military","Big Land","Merchant","Helicopter","Air", "Tribe"
+native_to="Missile","Land","Small Land","Non Military","Big Land","Merchant","Helicopter","Air", "Tribe"
 color.r=214
 color.g=185
 color.b=106
@@ -450,7 +450,7 @@ property_foliage=50
 property_temperate=50
 property_cold=20
 property_wet=20
-native_to="Missile","Land","Raiders","Small Land","Non Military","Big Land","Merchant","Helicopter","Air", "Tribe"
+native_to="Missile","Land","Small Land","Non Military","Big Land","Merchant","Helicopter","Air", "Tribe"
 color.r=43
 color.g=107
 color.b=19
@@ -491,7 +491,7 @@ cooler_drier_result="Tundra"
 flags="Starter","CanHaveRiver"
 property_green=50
 property_temperate=50
-native_to="Missile","Land","Raiders","Small Land","Non Military","Big Land","Merchant","Helicopter","Air", "Tribe"
+native_to="Missile","Land","Small Land","Non Military","Big Land","Merchant","Helicopter","Air", "Tribe"
 color.r=11
 color.g=138
 color.b=4
@@ -532,7 +532,7 @@ cooler_drier_result="none"
 flags="Starter","CanHaveRiver","Resort"
 property_mountainous=30
 property_green=50
-native_to="Missile","Land","Raiders","Small Land","Non Military","Big Land","Merchant","Helicopter","Air", "Tribe"
+native_to="Missile","Land","Small Land","Non Military","Big Land","Merchant","Helicopter","Air", "Tribe"
 color.r=24
 color.g=97
 color.b=5
@@ -577,7 +577,7 @@ flags="CanHaveRiver"
 property_foliage=50
 property_tropical=50
 property_wet=50
-native_to="Missile","Land","Raiders","Small Land","Non Military","Merchant","Helicopter","Air", "Tribe"
+native_to="Missile","Land","Small Land","Non Military","Merchant","Helicopter","Air", "Tribe"
 color.r=55
 color.g=156
 color.b=38
@@ -617,7 +617,7 @@ cooler_wetter_result="none"
 cooler_drier_result="none"
 flags="CanHaveRiver","Resort"
 property_mountainous=70
-native_to="Missile","Land","Raiders","Small Land","Non Military","Merchant","Helicopter","Air", "Tribe"
+native_to="Missile","Land","Small Land","Non Military","Merchant","Helicopter","Air", "Tribe"
 color.r=129
 color.g=127
 color.b=118
@@ -662,7 +662,7 @@ cooler_drier_result="Desert"
 flags="Starter","CanHaveRiver"
 property_green=50
 property_temperate=50
-native_to="Missile","Land","Raiders","Small Land","Non Military","Big Land","Merchant","Helicopter","Air", "Tribe"
+native_to="Missile","Land","Small Land","Non Military","Big Land","Merchant","Helicopter","Air", "Tribe"
 color.r=122
 color.g=156
 color.b=46
@@ -704,7 +704,7 @@ property_tropical=10
 property_temperate=10
 property_cold=10
 property_wet=100
-native_to="Missile","Land","Raiders","Small Land","Non Military","Merchant","Helicopter","Air", "Tribe"
+native_to="Missile","Land","Small Land","Non Military","Merchant","Helicopter","Air", "Tribe"
 color.r=48
 color.g=85
 color.b=97
@@ -745,7 +745,7 @@ cooler_wetter_result="Glacier"
 cooler_drier_result="Desert"
 flags="NoBarbs","CanHaveRiver"
 property_cold=50
-native_to="Missile","Land","Raiders","Small Land","Non Military","Big Land","Merchant","Helicopter","Air", "Tribe"
+native_to="Missile","Land","Small Land","Non Military","Big Land","Merchant","Helicopter","Air", "Tribe"
 color.r=188
 color.g=188
 color.b=188
@@ -1404,6 +1404,9 @@ graphic="tx.irrigation"
 activity_gfx="unit.irrigation"
 act_gfx_alt="unit.irrigate"
 rmact_gfx="None"
+reqs={"type","name","range","present","quiet"
+"Gov","Tribal","Player",FALSE,FALSE
+}
 build_time=0
 removal_time=0
 conflicts="Mine","Oil Well"
@@ -1549,46 +1552,46 @@ helptext=_("Pollution appears on tiles around cities with high production or pop
  cleaned. If a long time passes with an elevated risk of warming, its effects will be all the\
  more severe when it does occur.")
 
-[extra_depletion]
-name=_("Depleted Land")
-category="Nuisance"
-causes="Appear"
-rmcauses="Disappear"
-graphic="tx.depletion"
-graphic_alt="tx.pollution"
-activity_gfx="None"
-rmact_gfx="unit.pollution"
-appearance_reqs={	"type","name","range","present"
-			"Gov","Tribal","Player",TRUE
-		}
-appearance_chance = 500
+;[extra_depletion]
+;name=_("Depleted Land")
+;category="Nuisance"
+;causes="Appear"
+;rmcauses="Disappear"
+;graphic="tx.depletion"
+;graphic_alt="tx.pollution"
+;vactivity_gfx="None"
+;vrmact_gfx="unit.pollution"
+;appearance_reqs={	"type","name","range","present"
+;			"Gov","Tribal","Player",TRUE
+;		}
+;appearance_chance = 500
 ;disappearance_reqs=	{	"type","name","range","present"
 ;			}
-disappearance_chance = 3000
-buildable=FALSE
-build_time=0
-removal_time=0
+;disappearance_chance = 3000
+;buildable=FALSE
+;build_time=0
+;removal_time=0
 
-[extra_depletion_center]
-name=_("Depleted Land")
-category="Nuisance"
-causes="Appear"
-rmcauses="Disappear"
-graphic="tx.depletion"
-graphic_alt="tx.pollution"
-activity_gfx="None"
-rmact_gfx="unit.pollution"
-appearance_reqs=	{	"type","name","range","present"
-				"CityTile","Center","Local",TRUE
-				"Gov","Tribal","Player",TRUE
-			}
-appearance_chance = 2000
+;[extra_depletion_center]
+;name=_("Depleted Land")
+;category="Nuisance"
+;causes="Appear"
+;rmcauses="Disappear"
+;graphic="tx.depletion"
+;graphic_alt="tx.pollution"
+;activity_gfx="None"
+;rmact_gfx="unit.pollution"
+;appearance_reqs=	{	"type","name","range","present"
+;				"CityTile","Center","Local",TRUE
+;				"Gov","Tribal","Player",TRUE
+;			}
+;appearance_chance = 2000
 ;disappearance_reqs=	{	"type","name","range","present"
 ;			}
-disappearance_chance = 4000
-buildable=FALSE
-build_time=0
-removal_time=0
+;disappearance_chance = 4000
+;buildable=FALSE
+;build_time=0
+;removal_time=0
 
 [extra_26]
 name=_("Minor Tribe Village")
@@ -1677,7 +1680,7 @@ reqs={"type","name","range","present","quiet"
 }
 build_time=2
 removal_time=0
-native_to="Land","Raiders","Small Land","Non Military","Big Land","Merchant", "Tribe"
+native_to="Land","Small Land","Non Military","Big Land","Merchant", "Tribe"
 flags="NativeTile"
 conflicts="Airstrip","Airbase","Missile Silo"
 hidden_by="Fortress"
@@ -1702,7 +1705,7 @@ reqs={"type","name","range","present","quiet"
 }
 build_time=2
 removal_time=0
-native_to="Land","Raiders","Small Land","Non Military","Big Land","Merchant", "Tribe"
+native_to="Land","Small Land","Non Military","Big Land","Merchant", "Tribe"
 flags="NativeTile","NoStackDeath"
 conflicts="Airstrip","Airbase","Missile Silo"
 helptext=_("Fortresses are more permanent forts; construction on them can only begin once\
@@ -1820,7 +1823,10 @@ helptext=_("Buoys may be built in the ocean (by units on a sea-going vessel) to 
 name=_("Ruins")
 category="Bonus"
 causes="Base"
-rmcauses="Pillage"
+rmcauses="Pillage", "Disappear"
+disappearance_reqs=	{	"type","name","range","present"
+			}
+disappearance_chance = 100
 graphic="extra.ruins"
 activity_gfx="None"
 rmact_gfx="None"
@@ -1847,10 +1853,11 @@ reqs={"type","name","range","present","quiet"
 "UnitFlag","Settlers","Local",TRUE,FALSE
 "UnitClass","Sea","Local",FALSE,TRUE
 "TerrainClass","Land","Local",TRUE,FALSE
+"Gov","Tribal","Player",FALSE,FALSE
 }
 build_time=0
 removal_time=0
-native_to="Land","Raiders","Small Land","Non Military","Big Land","Merchant", "Tribe"
+native_to="Land","Small Land","Non Military","Big Land","Merchant", "Tribe"
 flags="NativeTile","AlwaysOnCityCenter"
 bridged_over   = "River"
 hidden_by="Railroad","Maglev"
@@ -1878,7 +1885,7 @@ reqs={"type","name","range","present","quiet"
 }
 build_time=3
 removal_time=0
-native_to="Land","Raiders","Small Land","Non Military","Big Land","Merchant", "Tribe"
+native_to="Land","Small Land","Non Military","Big Land","Merchant", "Tribe"
 flags="NativeTile","AutoOnCityCenter"
 bridged_over   = "River"
 hidden_by="Maglev"
@@ -1907,7 +1914,7 @@ reqs={"type","name","range","present","quiet"
 }
 build_time=3
 removal_time=0
-native_to="Land","Raiders","Small Land","Non Military","Merchant", "Tribe"
+native_to="Land","Small Land","Non Military","Merchant", "Tribe"
 flags="NativeTile","AutoOnCityCenter"
 bridged_over   = "River"
 helptext=_("With sufficient technology, you may build magnetic levitation systems\
@@ -1929,7 +1936,7 @@ buildable=FALSE
 build_time=0
 removal_time=0
 defense_bonus=25
-native_to="Land","Raiders","Small Land","Non Military","Big Land","Merchant","Trireme", "Tribe"
+native_to="Land","Small Land","Non Military","Big Land","Merchant","Trireme", "Tribe"
 flags="NativeTile"
 helptext=_("Any land terrain type may have a River on it. A River adds 1 trade to the\
  resources produced by that tile. It also increases a tile's defense factor by 25%.\
