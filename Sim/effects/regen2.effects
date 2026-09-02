@@ -1,4 +1,10 @@
 
+[effect_regen_all]
+type="HP_Regen"
+value=10
+reqs={"type","name","range"
+}
+
 [effect_regen_raiders]
 type="HP_Regen"
 value=10
@@ -17,7 +23,7 @@ reqs={"type","name","range"
 
 [effect_regen_warriors]
 type="HP_Regen"
-value=5
+value=10
 reqs={"type","name","range", "present"
 "UnitType","Warriors","Local", TRUE
 "Gov", "Monarchy","Player", FALSE
@@ -28,12 +34,6 @@ reqs={"type","name","range", "present"
 "Gov", "Fundamentalism","Player", FALSE
 }
 
-[effect_regen_partisan]
-type="Unit_Recover"
-value=10
-reqs={"type","name","range"
-"UnitType","Partisan","Local"
-}
 
 [effect_partisan_defence-city]
 type="Defend_Bonus"
@@ -42,3 +42,91 @@ reqs={"type","name","range"
 "CityTile","Center","Local"
 "UnitType","Partisan","Local"
 }
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+[effect_regen_ancient_hp60]
+type="HP_Regen"
+value=10
+reqs={"type","name","range", "present"
+"UnitFlag","BasicSupply","Local",TRUE
+"UnitFlag","hp60","Local",TRUE
+"MinHitPoints","36","Local",FALSE
+"UnitClass","Land","Local",TRUE
+}
+
+[effect_regen_ancient_hp120]
+type="HP_Regen"
+value=10
+reqs={"type","name","range", "present"
+"UnitFlag","BasicSupply","Local",TRUE
+"UnitFlag","hp120","Local",TRUE
+"MinHitPoints","72","Local",FALSE
+"UnitClass","Land","Local",TRUE
+}
+
+[effect_regen_advanced_hp60]
+type="HP_Regen"
+value=10
+reqs={"type","name","range", "present"
+"UnitFlag","AdvancedSupply","Local",TRUE
+"UnitFlag","hp60","Local",TRUE
+"MinHitPoints","24","Local",FALSE
+"UnitClass","Land","Local",TRUE
+"UnitType","Cannon","Local",FALSE
+}
+
+[effect_regen_advanced_hp120]
+type="HP_Regen"
+value=10
+reqs={"type","name","range", "present"
+"UnitFlag","AdvancedSupply","Local",TRUE
+"UnitFlag","hp120","Local",TRUE
+"MinHitPoints","48","Local",FALSE
+"UnitClass","Land","Local",TRUE
+}
+
+[effect_regen_modern_hp60]
+type="HP_Regen"
+value=10
+reqs={"type","name","range", "present"
+"UnitFlag","ModernSupply","Local",TRUE
+"UnitFlag","hp60","Local",TRUE
+"MinHitPoints","12","Local",FALSE
+"UnitClass","Land","Local",TRUE
+}
+
+[effect_regen_modern_hp120]
+type="HP_Regen"
+value=10
+reqs={"type","name","range", "present"
+"UnitFlag","ModernSupply","Local",TRUE
+"UnitFlag","hp120","Local",TRUE
+"MinHitPoints","24","Local",FALSE
+"UnitClass","Land","Local",TRUE
+}
+
+[effect_regen_hp150]
+type="HP_Regen"
+value=10
+reqs={"type","name","range", "present"
+"UnitFlag","ModernSupply","Local",TRUE
+"UnitFlag","hp150","Local",TRUE
+"MinHitPoints","30","Local",FALSE
+"UnitClass","Land","Local",TRUE
+}
+
+[effect_regen_partisan]
+type="HP_Regen"
+value=10
+reqs={"type","name","range", "present"
+"MinHitPoints","20","Local",FALSE
+"UnitType","Partisan","Local",TRUE
+}
+
+
+
+
+
+
