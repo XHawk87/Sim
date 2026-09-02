@@ -48,9 +48,9 @@ flags={"name","helptxt"
 "hp120",""
 "hp150",""
 "hp250",""
-"Basic Supply","Unit gets supplies off the land and can heal itself and rest to recover up to 60% of its full strength. To reach its full capacity it needs supplies and reinforecments (units) brought in from cities."
-"Advanced Supply","Unit gets supplies off the land and can heal itself and rest to recover up to 40% of its full strength. To reach its full capacity it needs supplies and reinforecments (units) brought in from cities."
-"Modern Supply","Unit gets supplies off the land and can heal itself and rest to recover up to 20% of its full strength. To reach its full capacity it needs supplies and reinforecments (units) brought in from cities."
+"BasicSupply","Unit gets supplies off the land and can heal itself and rest to recover up to 60% of its full strength. To reach its full capacity it needs supplies and reinforecments (units) brought in from cities."
+"AdvancedSupply","Unit gets supplies off the land and can heal itself and rest to recover up to 40% of its full strength. To reach its full capacity it needs supplies and reinforecments (units) brought in from cities."
+"ModernSupply","Unit gets supplies off the land and can heal itself and rest to recover up to 20% of its full strength. To reach its full capacity it needs supplies and reinforecments (units) brought in from cities."
 }
 
 class_flags={"name","helptxt"
@@ -143,12 +143,6 @@ name=_("?unitclass:Land")
 min_speed=1
 hp_loss_pct=0
 flags="TerrainSpeed","TerrainDefense","CanOccupyCity","BuildAnywhere","CollectRansom","ZOC","CanPillage","CanFortify"
-
-[unitclass_2]
-name=_("?unitclass:Raiders")
-min_speed=1
-hp_loss_pct=0
-flags="TerrainSpeed","TerrainDefense","CanOccupyCity","BuildAnywhere","CollectRansom","ZOC","KillCitizen","CanPillage","CanFortify"
 
 [unitclass_tribe]
 name=_("?unitclass:Tribe")
@@ -508,7 +502,7 @@ hitpoints=20
 firepower=1
 fuel=0
 uk_happy=0
-uk_food=3
+uk_food=1
 uk_shield=1
 uk_gold=1
 veteran_names="green"
@@ -607,7 +601,7 @@ helptext="Engineers are similar to Workers, but they work twice as fast, move tw
 
 [unit_5]
 name=_("Raiders")
-class="Raiders"
+class="Land"
 tech_req="None"
 gov_req="Tribal"
 obsolete_by="Militia"
@@ -630,7 +624,7 @@ fuel=0
 uk_happy=0
 uk_food=1
 uk_shield=1
-flags="IgZOC","Shield2Gold","Marines","Capturer","QuickAttack","Mergeable","Basic Supply"
+flags="IgZOC","Shield2Gold","Marines","Capturer","QuickAttack","Mergeable","BasicSupply"
 roles="FirstBuild","DefendGood","AttackStrongStartunit"
 helptext="This unit may be built from the start of the game. Raiders are the base of tribe's military power. They can attack fast and retreat if they realise casualties would become too great.","Raiders attack for less combat rounds, but use up less Movement Points per attack."
 
@@ -656,7 +650,7 @@ firepower=2
 fuel=0
 uk_happy=1
 uk_food=1
-flags="Capturer","Marines","QuickAttack","hp60","Basic Supply"
+flags="Capturer","Marines","QuickAttack","hp60","BasicSupply","Mergeable"
 roles="DefendOk"
 helptext="This is the weakest offensive unit. It is the default unit except in Tribalism, where it is replaced by Tribal-only Raiders. Both Raiders and Warriors are obsoleted by Militia.","Raiders attack for less combat rounds, but use up less Movement Points per attack."
 
@@ -685,13 +679,13 @@ uk_happy=1
 uk_food=1
 uk_shield=1
 uk_gold=1
-flags="Capturer","hp60","Basic Supply"
+flags="Capturer","hp60","BasicSupply","Mergeable"
 roles="FirstBuild","DefendGood"
 helptext="The Phalanx is armored infantry, suitable for defending your cities.\\Phalanx can't be built under Tribal government due to high level of discipline and organization it requires. As technology and society progresses, it is replaced by Arquebusiers."
 
 [unit_8]
 name=_("Bowmen")
-class="Raiders"
+class="Land"
 tech_req="None"
 gov_req="Tribal"
 obsolete_by="Skirmishers"
@@ -715,7 +709,7 @@ uk_happy=0
 uk_food=1
 uk_shield=1
 bombard_rate=6
-flags="Shield2Gold","Capturer","Marines","Bombarder","hp60","Mergeable","Basic Supply"
+flags="Shield2Gold","Capturer","Marines","Bombarder","hp60","Mergeable","BasicSupply"
 helptext="Bowmen can be built only under Tribal government. They fight with bows and arrows from a distance and do not engage the enemy directly. This is why they do not suffer damage when attacking, but can not destroy an enemy unit, only damage it. They are more vulnerable than other units when defending. "
 
 [unit_9]
@@ -742,7 +736,7 @@ uk_happy=1
 uk_food=1
 uk_gold=2
 bombard_rate=10
-flags="Capturer","Marines","Bombarder","hp60","Basic Supply"
+flags="Capturer","Marines","Bombarder","hp60","BasicSupply","Mergeable"
 roles="Hut","DefendOk"
 helptext="Archers fight with bows and arrows from a distance and do not engage the enemy directly. This is why they do not suffer damage when attacking, but can not destroy an enemy unit, only damage it. They are more vulnerable than other units when defending.\\When attacking, Archers perform a total of five combat rounds against their target.Archers can't be built under Tribal government. As technology progresses, they are replaced by Skirmishers."
 
@@ -770,7 +764,7 @@ fuel=0
 uk_happy=1
 uk_food=1
 uk_gold=2
-flags="Capturer","hp60","Basic Supply"
+flags="Capturer","hp60","BasicSupply","Mergeable"
 roles="DefendOk","BarbarianBuild","BarbarianSea"
 helptext="Swordsmen are heavily armed and well disciplined infantry units with an excellent offensive value."
 
@@ -798,7 +792,7 @@ fuel=0
 uk_happy=1
 uk_food=1
 uk_gold=3
-flags="Capturer","hp60","Basic Supply"
+flags="Capturer","hp60","BasicSupply","Mergeable"
 roles="DefendOk","BarbarianBuild","BarbarianSea"
 helptext="Legion is an advanced attack unit used in intense warfare. \\It can only be built in a city that contains Barracks."
 
@@ -825,7 +819,7 @@ fuel=0
 uk_happy=1
 uk_food=1
 uk_gold=2
-flags="Capturer","hp60","Basic Supply"
+flags="Capturer","hp60","BasicSupply","Mergeable"
 roles="FirstBuild","DefendGood"
 helptext="Equipped with long pikes, Pikemen replaces Phalanx as the preferred defender."
 
@@ -853,7 +847,7 @@ fuel=0
 uk_happy=1
 uk_food=1
 uk_gold=1
-flags="Capturer","Marines","QuickAttack","hp60","Advanced Supply"
+flags="Capturer","Marines","QuickAttack","hp60","AdvancedSupply","Mergeable"
 roles="FirstBuild","HutTech","DefendGood","BarbarianTech","BarbarianBuildTech","BarbarianSeaTech"
 helptext="Militia is the first unit equipped with Gunpowder technology, but represents hastily and not too well organised units consisting of citizens. Best used in case of emergency. ","Militia units attack for less combat rounds, but use up less Movement Points per attack."
 
@@ -882,7 +876,7 @@ fuel=0
 uk_happy=1
 uk_food=1
 uk_gold=3
-flags="Capturer","hp60","Advanced Supply"
+flags="Capturer","hp60","AdvancedSupply","Mergeable"
 roles="FirstBuild","HutTech","DefendGood","BarbarianTech","BarbarianBuildTech","BarbarianSeaTech"
 helptext="This is the first well-trained and professional military unit using gunpowder technology."
 
@@ -904,13 +898,13 @@ defense=4
 move_rate=2
 vision_radius_sq=2
 transport_cap=0
-hitpoints=100
+hitpoints=120
 firepower=3
 fuel=0
 uk_happy=1
 uk_food=1
-uk_gold=5
-flags="Capturer","hp100","Advanced Supply"
+uk_gold=6
+flags="Capturer","hp120","AdvancedSupply","Mergeable"
 roles="FirstBuild","HutTech","DefendGood","BarbarianTech","BarbarianBuildTech","BarbarianSeaTech"
 helptext="Musketeers are an elite force equipped with early firearms."
 
@@ -940,7 +934,7 @@ uk_happy=1
 uk_food=1
 uk_gold=3
 bombard_rate=12
-flags="Capturer","Marines","Bombarder","Advanced Supply"
+flags="Capturer","Marines","Bombarder","AdvancedSupply","hp60","Mergeable"
 roles="FirstBuild","HutTech","DefendGood","BarbarianTech","BarbarianBuildTech","BarbarianSeaTech"
 helptext="Skirmishers are hit-and-run unit designated to harrass enemy units from distance, stall any advances and test enemy strength before the main assault units attack."
 
@@ -966,7 +960,7 @@ fuel=0
 uk_happy=1
 uk_food=1
 uk_gold=4
-flags="Capturer","hp120","Advanced Supply"
+flags="Capturer","hp120","AdvancedSupply","Mergeable"
 roles="FirstBuild","DefendGood"
 helptext="Riflemen are World War-era infantry, very good at defending your cities."
 
@@ -995,7 +989,7 @@ fuel=0
 uk_happy=1
 uk_food=1
 uk_gold=12
-flags="IgZOC","IgTer","IgWall","Capturer", "Marines","QuickAttack","hp150","Advanced Supply"
+flags="IgZOC","IgTer","IgWall","Capturer", "Marines","QuickAttack","hp150","AdvancedSupply","Mergeable"
 roles="DefendOk"
 helptext="Commandos are highly mobile units as well as excellent defenders. They attack for less combat rounds, but use up less Movement Points per attack."
 
@@ -1024,7 +1018,7 @@ firepower=3
 fuel=0
 uk_happy=0
 uk_gold=1
-flags="Capturer","Marines","QuickAttack","hp60","Advanced Supply"
+flags="Capturer","Marines","QuickAttack","hp60","AdvancedSupply","Mergeable"
 helptext="Territorial guard, or state guard, are low-cost home defense units whose role is to provide token defense for large parts of territory or slow down rapid advance of the enemy. If well fortified on favourable terrain, they may put up a fight, but willl not be too efficient against a professional attack force. They attack for less combat rounds, but use up less Movement Points per attack."
 
 [unit_19]
@@ -1052,7 +1046,7 @@ fuel=0
 uk_happy=0
 uk_gold=0
 uk_food=1
-flags="IgZOC","IgTer","Capturer","Marines","QuickAttack","Advanced Supply"
+flags="IgZOC","IgTer","Capturer","Marines","QuickAttack","AdvancedSupply","Mergeable"
 roles="Partisan","DefendGood","BarbarianTech"
 helptext="Partisans are guerilla fighters who are experts at using the terrain to their advantage.","A number of Partisans are granted free when an enemy conquers your city -- they automatically assume defensive positions in the surrounding countryside -- but only under these conditions:","- Guerilla Warfare must be known by at least one player.","- At least three quarters of the citizens must have your nationality.","- You must know about Communism and Gunpowder.","- You must run either a Democracy or a Communist government.","Partisans are the only unit that doesn't lose its effectiveness when damaged.","Partisans attack for less combat rounds, but use up less Movement Points per attack.","","'We have lost two thirds of our manpower, but count on us as if we were at full strength.' - communique from the Second Brigade, Second Battalion, to the People's Liberation Army of Yugoslavia HQ during the Battle of Sutjeska, June 1943."
 
@@ -1081,7 +1075,7 @@ fuel=0
 uk_happy=0
 uk_food=1
 uk_gold=0
-flags="Fanatic","Capturer","Advanced Supply"
+flags="Fanatic","Capturer","AdvancedSupply","Mergeable"
 roles="DefendGood"
 helptext="Fanatics are warriors extremely devoted to a higher cause.","Fundamentalist nations can maintain Fanatic units without having to pay any upkeep except food nor causing military unhappiness.  Instead, each unit reduces the population by 1.","","Fanatics hit hard, but will also receive a lot of damage and are more likely to die than other units."
 
@@ -1109,7 +1103,7 @@ fuel=0
 uk_happy=1
 uk_food=1
 uk_gold=10
-flags="Capturer","Marines","hp120","Modern Supply"
+flags="Capturer","Marines","hp120","ModernSupply","Mergeable"
 roles="FirstBuild","DefendGood","BarbarianSeaTech"
 helptext="Naval infantry can attack land targets and conquer cities from ships."
 
@@ -1139,7 +1133,7 @@ uk_happy=1
 uk_food=1
 uk_gold=10
 paratroopers_range=10
-flags="IgZOC","IgWall","Capturer","Paratroopers","QuickAttack","hp120","Advanced Supply"
+flags="IgZOC","IgWall","Capturer","Paratroopers","QuickAttack","hp120","AdvancedSupply","Mergeable"
 roles="DefendOk"
 helptext="Paratroopers are experts at airborne attacks. From a friendly city or airbase, Paratroopers who have not expended any movement points can paradrop directly to any tile in range, and be immediately ready to act there. (Beware dropping into unseen territory, as Paratroopers landing on a tile occupied by enemy units are easy targets!). They attack for less combat rounds, but use up less Movement Points per attack.","Paratroopers are one of the elite military branches, able to improvise and perform more difficult tasks with less supply requirements than other units of the same era."
 
@@ -1167,7 +1161,7 @@ uk_food=1
 uk_shield=1
 uk_gold=12
 roles="FirstBuild","DefendGood"
-flags="Capturer", "Mechanic","hp150","Modern Supply"
+flags="Capturer", "Mechanic","hp150","ModernSupply","Mergeable"
 helptext="The Mechanized Infantry has the strongest inherent defensive strength of any land unit, and is very fast on roads and easy terrain, but it is hindered rather than helped by rough terrain (it cannot move into mountains, swamps, or jungles), and it is only available near the end of the technology tree."
 
 [unit_24]
@@ -1193,7 +1187,7 @@ fuel=0
 uk_happy=1
 uk_food=1
 uk_gold=1
-flags="Fast","Capturer","hp60","Basic Supply"
+flags="Fast","Capturer","hp60","BasicSupply","Mergeable"
 roles="Hut","Barbarian","AttackFastStartunit","Hunter"
 helptext="Horsemen are mounted warriors and an early shock-troop that can penetrate deep into enemy territory.\\Fast units suffer penalties when attacking tiles with cover (cities, forests...) "
 
@@ -1220,7 +1214,7 @@ fuel=0
 uk_happy=1
 uk_food=1
 uk_gold=2
-flags="Fast","Capturer","hp60","Basic Supply"
+flags="Fast","Capturer","hp60","BasicSupply","Mergeable"
 roles="AttackFastStartunit"
 helptext="Chariots are fast units with strong attack and no defence. They can only be built if there are Barracks I present in the city. Fast units suffer penalties when attacking non-flat and non-open terrain(cities, forests...) "
 
@@ -1247,7 +1241,7 @@ fuel=0
 uk_happy=1
 uk_food=2
 uk_gold=3
-flags="Fast","Capturer","hp120","Basic Supply"
+flags="Fast","Capturer","hp120","BasicSupply","Mergeable"
 roles="DefendOk","AttackFastStartunit","Hunter"
 helptext="Elephants are towering animals trained for war that are often used as powerful shock troops. They are also very good defenders. However, they are not as fast as other mounted units and also require more food. Obviously. \\Fast units suffer penalties when attacking tiles with cover (cities, forests...) "
 
@@ -1275,7 +1269,7 @@ fuel=0
 uk_happy=1
 uk_food=1
 uk_gold=4
-flags="Fast","Capturer","hp60","Basic Supply"
+flags="Fast","Capturer","hp60","BasicSupply","Mergeable"
 roles="HutTech","DefendOk","BarbarianTech","BarbarianBuildTech","AttackFastStartunit","Hunter"
 helptext="Knights are mounted and heavily armored warriors.\\Fast units suffer penalties when attacking tiles with cover (cities, forests...) "
 
@@ -1303,7 +1297,7 @@ fuel=0
 uk_happy=1
 uk_food=1
 uk_gold=5
-flags="Fast","Capturer","hp120","Advanced Supply"
+flags="Fast","Capturer","hp120","AdvancedSupply","Mergeable"
 roles="BarbarianBuildTech","AttackFastStartunit","Hunter"
 helptext="Dragoons are mounted warriors carrying early firearms.\\Fast units suffer penalties when attacking tiles with cover (cities, forests...) "
 
@@ -1329,7 +1323,7 @@ fuel=0
 uk_happy=1
 uk_food=1
 uk_gold=7
-flags="Fast","Capturer","hp120","Advanced Supply"
+flags="Fast","Capturer","hp120","AdvancedSupply","Mergeable"
 roles="AttackFastStartunit","Hunter"
 helptext="Cavalry are mounted and highly trained soldiers.\\Fast units suffer penalties when attacking tiles with cover (cities, forests...) "
 
@@ -1356,7 +1350,7 @@ uk_happy=1
 uk_food=1
 uk_shield=2
 uk_gold=10
-flags="Fast", "Mechanic","hp250","Modern Supply"
+flags="Fast", "Mechanic","hp250","ModernSupply","Mergeable"
 roles="DefendOk","AttackFastStartunit","Hunter"
 helptext="Armors are motorized war wagons that are faster, stronger, and can take more damage. However, they are less successful when attacking rough or covered terrain like cities, hills, mountains, forest and jungle. "
 
@@ -1385,7 +1379,7 @@ uk_food=1
 uk_shield=1
 uk_gold=5
 bombard_rate=12
-flags="Capturable","Bombarder", "Ancient Siege Equipment","Basic Supply"
+flags="Capturable","Bombarder", "Ancient Siege Equipment","BasicSupply","Mergeable"
 roles="AttackStrongStartunit"
 helptext="Catapults belong in the artillery class: they suffer no damage when attacking and damage all units on the attacked tile, but can only weaken enemy units, not destroy them. They attack 9 times during a single attack. ","While powerful, Catapults (and their successors) are bulky and awkward; they require roads to move in rough terrain (mountains, swamps, and jungles), are difficult to defend, and are too big for early ships (Triremes and Caravels)."
 
@@ -1414,7 +1408,7 @@ uk_food=1
 uk_shield=1
 uk_gold=10
 bombard_rate=16
-flags="Capturable","Bombarder","Advanced Supply"
+flags="Capturable","Bombarder","AdvancedSupply","Mergeable"
 roles="BarbarianTech","BarbarianBuildTech","AttackStrongStartunit"
 helptext="Cannons belong in the artillery class: they suffer no damage when attacking and damage all units on the attacked tile, but can only weaken enemy units, not destroy them. They attack 12 times during a single attack. As with the catapults they replace, they are weak defenders and will need an escort to be effective, and have limited mobility."
 
@@ -1443,7 +1437,7 @@ uk_food=1
 uk_shield=2
 uk_gold=12
 bombard_rate=16
-flags="Capturable","Bombarder", "Arty","Modern Supply"
+flags="Capturable","Bombarder", "Arty","ModernSupply","Mergeable"
 roles="AttackStrongStartunit"
 helptext="The artillery is an upgraded cannon. As with its predecessors, it belongs in the artillery class: they suffer no damage when attacking and damage all units on the attacked tile, but can only weaken enemy units, not destroy them. They attack 12 times during a single attack. "
 
@@ -1471,7 +1465,7 @@ uk_food=1
 uk_shield=2
 uk_gold=15
 bombard_rate=20
-flags="Bombarder", "Arty","Modern Supply"
+flags="Bombarder", "Arty","ModernSupply","Mergeable"
 roles="AttackStrongStartunit"
 helptext="Howitzers are upgraded artillery with improved defensive as well as offensive capabilities. However, they still have the limited mobility of their predecessors."
 
@@ -1500,7 +1494,7 @@ uk_food=1
 uk_shield=3
 uk_gold=6
 targets="Missile","Helicopter","Air"
-flags="AirAttacker","Unbribable","QuickAttack","hp100"
+flags="AirAttacker","Unbribable","QuickAttack","hp100","Mergeable"
 roles="DefendOk"
 helptext="Fighters are your first airborne units. They can move anywhere and attack any unit. Fighters attack for less combat rounds, but use up less Movement Points per attack."
 
@@ -1529,7 +1523,7 @@ uk_food=1
 uk_shield=4
 uk_gold=8
 bombard_rate=12
-flags="FieldUnit","AirAttacker","Unbribable","Bombarder"
+flags="FieldUnit","AirAttacker","Unbribable","Bombarder","Mergeable"
 helptext="Bombers are specialized airborne units that may only attack ground and sea targets, not other airborne units.","A Bomber's attack against units on land is a bombard attack; against units on water it has a regular attack."
 
 [unit_37]
@@ -1558,7 +1552,7 @@ uk_food=1
 uk_shield=5
 uk_gold=10
 bombard_rate=5
-flags="FieldUnit","NoHome","AirAttacker","Unbribable","Bombarder"
+flags="FieldUnit","NoHome","AirAttacker","Unbribable","Bombarder","Mergeable"
 helptext="Strategic Bombers are specialized airborne units that may only attack ground and sea targets, not other airborne units.","A Bomber's attack against units on land is a bombard attack; against units on water it has a regular attack.\\Strategic Bomber can carry Atom Bombs.\\In real world, like all aircraft, Strategic Bombers can spend only a limited time in the air without refuelling. However, it was a unit designed to remain airborne for very long periods of time and had almost unimited range. To represent this behaviour in the game which is an approximation of reality and to skip unnecessary technicalities, Strategic Bomber unit does not have to land and can travel over very long distance. Its main design purpose is carrying nukes and remain in the air forever as a reserve for a retaliatory nuclear strike after its homeland has been hit. Because of this, this unit is Unhomed so it does not depend on the destiny of its home town.Of course, the Strategic Bomber can also carry nukes to be used for first strike."
 
 [unit_38]
@@ -1577,7 +1571,7 @@ defense=2
 move_rate=8
 vision_radius_sq=8
 transport_cap=1
-cargo="Land","Raiders","Non Military"
+cargo="Land","Non Military"
 hitpoints=100
 firepower=4
 fuel=0
@@ -1585,7 +1579,7 @@ uk_happy=1
 uk_food=1
 uk_shield=3
 uk_gold=6
-flags="AirAttacker","Unbribable","QuickAttack","hp100"
+flags="AirAttacker","Unbribable","QuickAttack","hp100","Mergeable"
 helptext="Helicopters can transport one unit of infantry; while most troops must load or unload in a city or airbase units specializing in mobility (Paratroopers, Commandos, Marines, Partisans, and Fanatics) can embark or disembark at any time.","Care must be exercised, because Helicopters lose a small amount of health for every turn not spent in a city or airbase or on a Carrier."
 
 [unit_39]
@@ -1614,7 +1608,7 @@ uk_shield=4
 uk_gold=8
 targets="Missile","Helicopter","Air"
 bombard_rate=5
-flags="AirAttacker","Unbribable","QuickAttack"
+flags="AirAttacker","Unbribable","QuickAttack","Mergeable"
 roles="DefendGood"
 helptext="An improved Fighter, with improved attack and a higher movement radius."
 
@@ -1643,7 +1637,7 @@ uk_food=1
 uk_shield=6
 uk_gold=10
 bombard_rate=6
-flags="OneAttack","FieldUnit","AirAttacker","Unbribable","Bombarder"
+flags="OneAttack","FieldUnit","AirAttacker","Unbribable","Bombarder","Mergeable"
 roles="DefendOk"
 helptext="An improved Bomber, with improved attack and a higher movement radius."
 
@@ -1664,12 +1658,12 @@ defense=1
 move_rate=4
 vision_radius_sq=2
 transport_cap=1
-cargo="Tribe","Land","Raiders","Small Land","Non Military","Merchant"
+cargo="Tribe","Land","Small Land","Non Military","Merchant"
 hitpoints=20
 firepower=1
 fuel=0
 uk_happy=0
-flags="BadCityDefender","QuickAttack","Basic Supply"
+flags="BadCityDefender","QuickAttack","BasicSupply","Mergeable"
 roles="FerryBoat"
 helptext=""
 
@@ -1690,7 +1684,7 @@ defense=1
 move_rate=6
 vision_radius_sq=5
 transport_cap=2
-cargo="Tribe","Land","Raiders","Small Land","Non Military","Merchant"
+cargo="Tribe","Land","Small Land","Non Military","Merchant"
 hitpoints=40
 firepower=2
 fuel=0
@@ -1698,7 +1692,7 @@ uk_happy=0
 uk_food=1
 uk_shield=0
 uk_gold=1
-flags="BadCityDefender","Capturable","QuickAttack","Advanced Supply"
+flags="BadCityDefender","Capturable","QuickAttack","AdvancedSupply","Mergeable"
 roles="FerryBoat"
 helptext="The Trireme is your first boat unit. It can act as a transport ship and has rudimentary offensive capabilities, and unlike later boats can travel on rivers, but it may not enter deep ocean tiles."
 
@@ -1719,7 +1713,7 @@ defense=2
 move_rate=6
 vision_radius_sq=2
 transport_cap=3
-cargo="Tribe","Land","Raiders","Small Land","Non Military","Merchant"
+cargo="Tribe","Land","Small Land","Non Military","Merchant"
 hitpoints=60
 firepower=3
 fuel=0
@@ -1727,7 +1721,7 @@ uk_happy=0
 uk_food=1
 uk_shield=1
 uk_gold=1
-flags="Only_Native_Attack","BadCityDefender","QuickAttack","hp60","Advanced Supply"
+flags="Only_Native_Attack","BadCityDefender","QuickAttack","hp60","AdvancedSupply","Mergeable"
 roles="FerryBoat","BarbarianBoat"
 helptext="The Caravel is a sailing ship that can enter any ocean tile."
 
@@ -1748,7 +1742,7 @@ defense=4
 move_rate=8
 vision_radius_sq=2
 transport_cap=4
-cargo="Tribe","Land","Raiders","Small Land","Non Military","Merchant"
+cargo="Tribe","Land","Small Land","Non Military","Merchant"
 hitpoints=60
 firepower=3
 fuel=0
@@ -1756,7 +1750,7 @@ uk_happy=0
 uk_food=1
 uk_shield=1
 uk_gold=2
-flags="BadCityDefender","QuickAttack","hp60","Advanced Supply"
+flags="BadCityDefender","QuickAttack","hp60","AdvancedSupply","Mergeable"
 roles="FerryBoat","BarbarianBoat"
 helptext="The Galleon is a pure transport ship, the first which can transport large wheeled units. It cannot attack other ships, though it may still defend itself when attacked."
 
@@ -1784,7 +1778,7 @@ uk_happy=0
 uk_food=1
 uk_shield=1
 uk_gold=2
-flags="BadCityDefender","QuickAttack","hp60"
+flags="BadCityDefender","QuickAttack","hp60","Mergeable"
 roles="Hunter"
 helptext="The Frigate is a specialized ship with a strong offensive value, and can attack units on land, but it cannot transport units."
 
@@ -1951,7 +1945,7 @@ defense=1
 move_rate=8
 vision_radius_sq=8
 transport_cap=8
-cargo="Missile","Raiders","Non Military"
+cargo="Missile","Non Military"
 vision_layer="Stealth"
 hitpoints=150
 firepower=4
@@ -1982,7 +1976,7 @@ defense=1
 move_rate=8
 vision_radius_sq=8
 transport_cap=8
-cargo="Missile","Raiders","Non Military","Helicopter","Air"
+cargo="Missile","Non Military","Helicopter","Air"
 hitpoints=250
 firepower=1
 fuel=0
@@ -2010,7 +2004,7 @@ defense=1
 move_rate=8
 vision_radius_sq=8
 transport_cap=8
-cargo="Tribe","Land","Raiders","Small Land","Non Military","Big Land","Merchant"
+cargo="Tribe","Land","Small Land","Non Military","Big Land","Merchant"
 hitpoints=100
 firepower=1
 fuel=0
@@ -2248,7 +2242,7 @@ helptext="A Diplomat is an official that carries your dispatches and is authoriz
 [unit_Liaison]
 name=_("Military Liaison")
 class="Non Military"
-tech_req="none"
+tech_req="Writing"
 graphic="u.diplomat"
 sound_move="m_diplomat"
 sound_move_alt="m_generic"
@@ -2258,7 +2252,7 @@ build_cost=10
 pop_cost=0
 attack=0
 defense=0
-move_rate=8
+move_rate=4
 vision_radius_sq=2
 transport_cap=0
 vision_layer="Stealth"
@@ -2562,7 +2556,7 @@ defense=1
 move_rate=4
 vision_radius_sq=2
 transport_cap=2
-cargo="Missile","Raiders"
+cargo="Missile"
 hitpoints=10
 firepower=1
 fuel=0
