@@ -14,9 +14,19 @@
 -- file called 'default.lua'. The one loaded if your ruleset
 -- does not provide an override is default/default.lua.
 
+function city_has_any_building(city)
+  local index = 0
+  while true do
+    local building = find.building_type(index)
+    if not building then return false end
+    if city:has_building(building) then return true end
+    index = index + 1
+  end
+end
 
 -- Place Ruins at the location of the destroyed city.
 function city_destroyed_callback(city, loser, destroyer)
+  if not city_has_any_building(city) then return end
   city.tile:create_extra("Ruins", NIL)
   -- continue processing
   return false
