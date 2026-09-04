@@ -1525,7 +1525,7 @@ activity_gfx="unit.cultural_site"
 act_gfx_alt="unit.buoy"
 rmact_gfx="None"
 reqs={"type",     "name",     "range",  "present"
-      "Tech",     "Culture",  "Player", TRUE
+      "Tech",     "Archaeology",  "Player", TRUE
       "Extra",    "Ruins",    "Local",  TRUE
       "UnitFlag", "Settlers", "Local",  TRUE
       "CityTile", "Center",   "Local",  FALSE
