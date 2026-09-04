@@ -10,7 +10,7 @@ reqs={
 
 [effect_cultural_site_trade]
 type="Output_Add_Tile"
-value=1
+value=2
 reqs={
     "type",       "name",          "range", "present"
     "OutputType", "Trade",         "Local", TRUE
