@@ -762,6 +762,11 @@ name = _("Hybrid Seeds")
 req1 = "Biology"
 req2 = "The Corporation"
 
+[advance_archaeology]
+name = _("Archaeology")
+req1 = "Industrialization"
+req2 = "None"
+
 [advance_synthetic_fertilizer]
 name = _("Synthetic Fertilizer")
 req1 = "Biology"
