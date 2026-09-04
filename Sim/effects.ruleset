@@ -4566,3 +4566,11 @@ reqs	= { 	"type", "name", "range", "present"
 		"OutputType","Trade","Local"	 
 	  }
 
+[effect_hybrid]
+type="Output_Add_Tile"
+value=1
+reqs={"type","name","range","present"
+"Extra", "Farmland", "Local", TRUE
+"Building","Institute for Agriculture","City",TRUE
+"OutputType","Food","Local",TRUE
+}
