@@ -1934,3 +1934,17 @@ upkeep=0
 sabotage=100
 helptext="Military academy allows the city to train Commando units.", "In order to build it, a city must have Barracks II."
 
+[building_institute_agriculture]
+name=_("Institute for Agriculture")
+genus="Improvement"
+graphic="b.institute_agriculture"
+graphic_alt="b.university"
+sound="b_barracks"
+sound_alt="b_generic"
+reqs={"type","name","range"
+"Tech", "Hybrid Seeds", "Player"
+}
+build_cost=200
+upkeep=0
+sabotage=100
+helptext="Institute for Agriculture is where research is done and results go directly into the fields. Every farmland around the city yields +1 food."
