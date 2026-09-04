@@ -4566,11 +4566,22 @@ reqs	= { 	"type", "name", "range", "present"
 		"OutputType","Trade","Local"	 
 	  }
 
+[effect_fertilizer]
+type="Output_Add_Tile"
+value=1
+reqs={"type","name","range","present"
+"Tech","Fertilizer Plant","Player",TRUE
+"Extra", "Farmland", "Local", TRUE
+"Terrain","Plains","Local",TRUE
+"OutputType","Food","Local",TRUE
+}
+
 [effect_hybrid]
 type="Output_Add_Tile"
 value=1
 reqs={"type","name","range","present"
 "Extra", "Farmland", "Local", TRUE
+"Terrain","Plains","Local",FALSE
 "Building","Institute for Agriculture","City",TRUE
 "OutputType","Food","Local",TRUE
 }
