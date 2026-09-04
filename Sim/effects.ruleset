@@ -15,6 +15,7 @@
 *include "Sim/effects/regen2.effects"
 *include "Sim/effects/supply.effects"
 *include "Sim/effects/combat_rounds.effects"
+*include "Sim/effects/ruins.effects"
 
 [datafile]
 description="Sim ruleset effect data for Freeciv21"

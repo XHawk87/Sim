@@ -1,0 +1,19 @@
+[effect_ruins_shields]
+type="Output_Add_Tile"
+value=1
+reqs={
+    "type",       "name",           "range", "present"
+    "OutputType", "Shield",         "Local", TRUE
+    "Extra",      "Ruins",          "Local", TRUE
+    "Extra",      "Cultural Site",  "Local", FALSE
+}
+
+[effect_cultural_site_trade]
+type="Output_Add_Tile"
+value=1
+reqs={
+    "type",       "name",          "range", "present"
+    "OutputType", "Trade",         "Local", TRUE
+    "Extra",      "Cultural Site", "Local", TRUE
+}
+

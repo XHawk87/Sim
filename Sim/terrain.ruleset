@@ -1439,12 +1439,13 @@ reqs={"type","name","range","present","quiet"
 }
 build_time=0
 removal_time=0
-conflicts="Irrigation","Resort","Farmland"
+conflicts="Irrigation", "Resort", "Farmland", "Cultural Site"
 hidden_by="Oil Well"
 helptext=_("Mines can be built on some types of terrain, which increases the\
  number of production points produced by that tile. Hills and Mountains get\
  an extra 2 production points per tile; other terrains get 1 extra production\
- point. Building a mine on an irrigated tile will destroy the irrigation.")
+ point. Building a mine on irrigation, farmland, resorts, or cultural sites\
+ will destroy them.")
 
 [extra_22]
 name=_("Oil Well")
@@ -1508,10 +1509,34 @@ reqs={"type","name","range","present"
 }
 build_time=9
 removal_time=0
-conflicts="Mine","Farmland"
+conflicts="Mine", "Farmland", "Cultural Site"
 helptext=_("Resort can be built on hills and mountains. It can coexist with\
- irrigation, but not with farmland or mine. The city population uses it for rest and\
- recreation resulting in additional Trade produced in the city.")
+ irrigation, but not with farmland, mines, or cultural sites. The city\
+ population uses it for rest and recreation resulting in additional Trade\
+ produced in the city.")
+
+[extra_cultural_site]
+name=_("Cultural Site")
+category="Infra"
+causes="Base"
+graphic="base.cultural_site"
+graphic_alt="tx.village"
+activity_gfx="unit.cultural_site"
+act_gfx_alt="unit.buoy"
+rmact_gfx="None"
+reqs={"type",     "name",     "range",  "present"
+      "Tech",     "Culture",  "Player", TRUE
+      "Extra",    "Ruins",    "Local",  TRUE
+      "UnitFlag", "Settlers", "Local",  TRUE
+      "CityTile", "Center",   "Local",  FALSE
+}
+build_time=9
+removal_time=0
+conflicts="Mine", "Farmland", "Resort"
+helptext=_("Cultural sites can be built on ruins to preserve them for later\
+ generations. It can coexist with irrigation, but not with farmland, mines, or\
+ resorts. The city population uses it for sacred pilgrimage, or tourism\
+ resulting in additional Trade produced in the city.")
 
 [extra_25]
 name=_("Pollution")
@@ -1633,11 +1658,12 @@ reqs={"type","name","range"
 build_time=0
 removal_time=0
 conflicts="Mine","Oil Well","Resort"
-helptext=_("Once Refrigeration is known, irrigation systems can be upgraded to farmland\
- by irrigating them a second time; farmland tile provides 50% more food.\ 
- Hence, farmland is only useful on tiles which with irrigation yield 2 or more food.\
- Farmland on a tile prevents any trade bonus from Super Highways. Like irrigation, \
- farmland is incompatible with mines and oil wells.")
+helptext=_("Once Refrigeration is known, irrigation systems can be upgraded to\
+ farmland by irrigating them a second time; farmland tile provides 50% more\
+ food. Hence, farmland is only useful on tiles which with irrigation yield 2 or\
+ more food. Farmland on a tile prevents any trade bonus from Super Highways.\
+ Like irrigation, farmland is incompatible with mines, and oil wells. Upgrading\
+ to farmland will also destroy resorts and cultural sites.")
 
 [extra_28]
 name=_("Fallout")
@@ -1824,8 +1850,10 @@ name=_("Ruins")
 category="Bonus"
 causes="Base"
 rmcauses="Pillage", "Disappear"
-disappearance_reqs=	{	"type","name","range","present"
-			}
+disappearance_reqs={
+  "type",   "name",          "range",  "present"
+  "Extra",  "Cultural Site", "Local",  FALSE
+}
 disappearance_chance = 100
 graphic="extra.ruins"
 activity_gfx="None"
@@ -1838,8 +1866,9 @@ buildable=FALSE
 build_time=0
 removal_time=0
 flags="TerrChangeRemoves"
-helptext=_("Ruins mark the former site of a city that was destroyed or abandoned.\
- They have no effect on gameplay.")
+helptext=_("Ruins mark the former site of a city that was destroyed or\
+ abandoned. They produce 1 extra shield when worked, however they have a 1%\
+ chance each turn to disappear unless they are preserved with a Cultural Site")
 
 [extra_36]
 name=_("Road")
@@ -1979,6 +2008,9 @@ helptext=_("Any land terrain type may have a River on it. A River adds 1 trade t
 extra = "Resort"
 gui_type = "Other"
 
+[base_cultural_site]
+extra="Cultural Site"
+gui_type="Other"
 
 [base_1]
 extra="Fort"
