@@ -84,3 +84,6 @@ flag="pirate"
 style="European"
 cities="New Providence","Port Royal","Tortuga"
 legend="As long as honest men have sailed the seas, pirates have been a scourge of them and of all coastal dwelling peoples."
+
+*include "Sim/nation/animals.ruleset"
+
