@@ -4570,7 +4570,7 @@ reqs	= { 	"type", "name", "range", "present"
 type="Output_Add_Tile"
 value=1
 reqs={"type","name","range","present"
-"Tech","Fertilizer Plant","Player",TRUE
+"Building","Fertilizer Plant","City",TRUE
 "Extra", "Farmland", "Local", TRUE
 "Terrain","Plains","Local",TRUE
 "OutputType","Food","Local",TRUE
