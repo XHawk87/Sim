@@ -46,7 +46,7 @@ set tinyisles enabled
 set tilesperplayer 80 # <-----------------------------------------------------
 
 # general rules
-set aifill 40 # see players.serv   <------------------------------------------
+set aifill 24 # see players.serv   <------------------------------------------
 set nationset all
 set borders enabled
 set citymindist 1
